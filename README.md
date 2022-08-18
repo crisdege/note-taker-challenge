@@ -6,6 +6,8 @@ This application uses node.js and Express.js. When the user accesses this applic
 
 # URL of the deployed application
 
+https://whispering-basin-64474.herokuapp.com/
+
 # URL of the GitHub repository
 
 https://github.com/crisdege/note-taker-challenge

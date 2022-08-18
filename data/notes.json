@@ -1,10 +1,1 @@
-[
-    {
-        "title":"it works!",
-        "text":"not sure what happened, but it works!"
-    },
-    {
-        "title":"adding another note",
-        "text":"la la la"
-    }
-]
+[{"title":"1st note","text":"to have something in it"},{"title":"are you still working?","text":"please work!"}]

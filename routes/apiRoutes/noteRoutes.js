@@ -17,6 +17,23 @@ fs.readFile("./data/notes.json", "utf8", (err, data) => {
     updateData();
     return console.log(newNote.title + "was added!");
   });
+
+  router.get("/notes/:id", (req, res) => {
+    res.json(notes[req.params.id]);
+  });
+
+  router.delete("/notes/:id", (req, res) => {
+    notes.splice(req.params.id, 1);
+    updateData();
+    console.log("Deleted note with id " + req.params.id);
+  });
+
+  function updateData() {
+    fs.writeFile("data/notes.json", JSON.stringify(notes, "\t"), (err) => {
+      if (err) throw err;
+      return true;
+    });
+  }
 });
 
 module.exports = router;

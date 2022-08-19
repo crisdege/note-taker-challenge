@@ -30,8 +30,15 @@ fs.readFile("./data/notes.json", "utf8", (err, data) => {
   });
 
   router.delete("/notes/:id", (req, res) => {
-    notes.splice(req.params.id, 1);
-    updateData();
+    const id = req.params.id;
+    let note;
+    notes.map((element, index) => {
+      if (element.id == id) {
+        note = element;
+        notes.splice(index, 1);
+        return res.json(note);
+      }
+    });
     console.log("Deleted note with id " + req.params.id);
   });
 
